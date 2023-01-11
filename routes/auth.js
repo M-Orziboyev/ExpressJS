@@ -3,10 +3,16 @@ import { Router } from "express";
 const router = Router();
 
 router.get('/register', (req, res) => {
-    res.render('register')
+    res.render('register', {
+        title: "Register",
+        isRegister: true,
+    })
 })
 router.get('/login', (req, res) => {
-    res.render('login')
+    res.render('login', {
+        title: "Login",
+        isLogin: true,
+    })
 })
 
 
