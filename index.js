@@ -1,5 +1,7 @@
 import express from "express";
-import {engine, create} from 'express-handlebars'
+import {engine, create} from 'express-handlebars';
+import AuthRouter from './routes/auth.js'
+import ProductsRouter from './routes/products.js'
 
 const app = express();
 
@@ -9,12 +11,8 @@ app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 app.set('views', './views');
 
-app.get('/', (req, res) => {
-    res.render('index')
-})
-app.get('/about', (req, res) => {
-    res.render('about')
-})
+app.use(AuthRouter)
+app.use(ProductsRouter)
 
 
 
