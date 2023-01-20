@@ -30,7 +30,7 @@ const startApp = () => {
 		mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true}, () => console.log('Mongo DB connected'))
 
 		const PORT = process.env.PORT || 4100
-		app.listen(PORT, () => console.log(`Server is running on port: ${PORT}`))
+		app.listen(PORT, () => console.log(`http://localhost:${PORT}/`))
 	} catch (error) {
 		console.log(error)
 	}
