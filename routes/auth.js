@@ -31,6 +31,7 @@ if (!isPassEqual) {
     return res.send(200, "Password wrong")
 }
 res.redirect('/')
+    console.log("Muzaffarjon")
 })
 router.post('/register', async (req, res) => {
     const hashedPassword = await bcrypt.hash(req.body.password, 10)
